@@ -13,7 +13,7 @@ First, create a virtual environment for the project and install all the requirme
 2. Install other dependencies. `pip install -r requirements.txt -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 3. If you plan to run SAID, then install dependencies with `python src/intrinsic_said_setup.py develop`. Otherwise, skip this step. 
 
-The steps above only needs to be done once. In addition, every time you start a new session, you will need to run `. src/start.sh`
+The steps above only needs to be done once. In addition, every time you start a new session, you will need to run `. bin/start.sh`
 
 ## Run your first experiment
 
