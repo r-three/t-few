@@ -1,6 +1,6 @@
 # T-Few
 
-This repository contains the official code for the paper: "[Few-Shot Parameter-Efficient Fine-Tuning Outperforms In-Context Learning]()".
+This repository contains the official code for the paper: "[Few-Shot Parameter-Efficient Fine-Tuning Outperforms In-Context Learning](https://arxiv.org/abs/2205.05638)".
 
 This method outperforms in-context learning with GPT-3 and achieves state-of-the-art on "[RAFT](https://huggingface.co/spaces/ought/raft-leaderboard)".
 
@@ -37,8 +37,17 @@ This should take a few hours. After that, you can use `scripts/get_results_table
 
 ## Citation
 
-We use the following code in our works:
 
+```
+@article{liu2020tfew,
+  title={Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning},
+  author={Liu, Haokun and Tam, Derek and Muqeeth, Mohammed and Mohta, Jay and Huang, Tenghao and Bansal, Mohit and Raffel, Colin},
+  journal={arXiv preprint arXiv:2205.05638},
+  year={2022}
+}
+```
+
+We use the following code in our works:
 ```
 @article{mahabadi2021compacter,
   title={Compacter: Efficient low-rank hypercomplex adapter layers},
