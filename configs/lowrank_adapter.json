@@ -1,0 +1,11 @@
+{
+    "adapter_type": "lowrank",
+    "adapter_reduction_factor": 4,
+    "adapter_non_linearity": "relu",
+    "lowrank_adapter_w_init": "glorot-uniform",
+    "lowrank_adapter_rank": 1,
+    "trainable_param_names": ".*layer_norm.*|.*adapter.*",
+    "model_modifier": "adapters",
+    "lr": 3e-3,
+    "num_steps": 500
+}

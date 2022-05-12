@@ -1,0 +1,22 @@
+{
+    "adapter_type": "compacter",
+    "adapter_reduction_factor": 32,
+    "adapter_non_linearity": "relu",
+    "compacter_hypercomplex_division": 4,
+    "compacter_learn_phm": true,
+    "compacter_hypercomplex_nonlinearity": "glorot-uniform",
+    "compacter_shared_phm_rule": false,
+    "compacter_factorized_phm": true,
+    "compacter_shared_W_phm": false,
+    "compacter_factorized_phm_rule": false,
+    "compacter_phm_c_init": "normal",
+    "compacter_phm_rank": 1,
+    "compacter_phm_init_range": 0.0001,
+    "compacter_add_compacter_in_self_attention": true,
+    "compacter_add_compacter_in_cross_attention": false,
+    "compacter_kronecker_prod": false,
+    "trainable_param_names": ".*layer_norm.*|.*adapter.*",
+    "model_modifier": "adapters",
+    "lr": 3e-3,
+    "num_steps": 500
+}

@@ -1,0 +1,8 @@
+{
+    "fishmask_mode": "create",
+    "fishmask_keep_ratio": 0.0002,
+    "batch_size": 1,
+    "eval_before_training": false,
+    "eval_epoch_interval": 10000,
+    "save_model": false
+}

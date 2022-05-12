@@ -1,0 +1,10 @@
+{
+    "dataset": "T0Mixture",
+    "batch_size": 2,
+    "grad_accum_factor": 1,
+    "few_shot": false,
+    "eval_before_training": false,
+    "eval_epoch_interval": 10000,
+    "num_steps": 100000,
+    "lr": 3e-4
+}

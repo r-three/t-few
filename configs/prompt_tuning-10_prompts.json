@@ -1,0 +1,11 @@
+{
+    "prompt_tuning_num_prefix_emb": 10,
+    "model_modifier": "prompt-tuning",
+    "few_shot": true,
+    "lr": 3e-1,
+    "unlikely_loss": 0,
+    "batch_size": 8,
+    "num_steps": 1000,
+    "trainable_param_names": ".*prompt_embedding.*",
+    "scale_parameter": false
+}

@@ -1,0 +1,9 @@
+{
+"intrinsic_projection": "fastfood",
+"intrinsic_said": true, 
+"intrinsic_dim": 500000,
+"trainable_param_names":"intrinsic_parameter|intrinsic_parameter_said",
+"model_modifier": "intrinsic",
+"lr": 3e-2,
+"num_steps": 3000
+}
