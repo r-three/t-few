@@ -10,8 +10,8 @@ First, create a virtual environment for the project and install all the requirme
 (We use conda to manage environments. Be sure to install and initialize conda first.)
 
 1. Create a virtual environment with python 3.7 `conda create -n tfew python==3.7`, then activate the environment `conda activate tfew`.
-2. Download NICL repo, switch to `t0` branch, and install other dependencies. `pip install -r requirements.txt -f https://download.pytorch.org/whl/cu113/torch_stable.html`
-3. Run `python src/intrinsic_said_setup.py develop`
+2. Install other dependencies. `pip install -r requirements.txt -f https://download.pytorch.org/whl/cu113/torch_stable.html`
+3. If you plan to run SAID, then install dependencies with `python src/intrinsic_said_setup.py develop`. Otherwise, skip this step. 
 
 The steps above only needs to be done once. In addition, every time you start a new session, you will need to run `. src/start.sh`
 
@@ -19,14 +19,14 @@ The steps above only needs to be done once. In addition, every time you start a 
 
 Once you finished setting up the environment, you can try running
 `CUDA_VISIBLE_DEVICES=3 python -m src.pl_train -c t0.json+rte.json -k save_model=False exp_name=first_exp`
-The outputs of this run will be saved to `${OUTPUT_PATH}/first_exp/`, which is usually `/nicl/exp_out/first_exp/`. Here, `first_exp` is the experiment name, you can run more experiments with different expeirment names. The code will automatically skip finished experiments. (However, if you wish to rerun a finished experiment under the same experiment name, you will need to manually remove the corresponding files in the output directory.)
+The outputs of this run will be saved to `${OUTPUT_PATH}/first_exp/`, which is usually `/t-few/exp_out/first_exp/`. Here, `first_exp` is the experiment name, you can run more experiments with different expeirment names. The code will automatically skip finished experiments. (However, if you wish to rerun a finished experiment under the same experiment name, you will need to manually remove the corresponding files in the output directory.)
 
 There are two ways to control an experiment.
 
 1. You can specify config files with `-c`. Multiple config files can be combined with `+`. (When there are conflits, config terms from the config file on the right will have greater power.) This will be convinient when you have multiple terms that forms a fixed group.
 2. You can override values with `-k`. This will be convinient when you need to change a small number of terms.
 
-It is recommended to use GPUs with 40GB to train T0(3B) and 80GB to train T0(11B)
+It is recommended to use GPUs with 40GB to train T0(3B) and 80GB to train T0
 
 ## Run an array of experiments
 
