@@ -59,6 +59,8 @@ class Config(object):
         self.exp_name = None
         self.allow_skip_exp = True
 
+        self.split_option_flag = False # Whether to split the answer choices during eval to lower memory usage for datasets with lots of answer choices 
+
         self.model_modifier = ""
         # Prompt Tuning configs
         self.prompt_tuning_num_prefix_emb = 100
