@@ -37,7 +37,7 @@ This should take a few hours. After that, you can use `scripts/get_results_table
 
 ## Citation
 
-
+If you find this repo helpful, welcome to cite our work:
 ```
 @article{liu2020tfew,
   title={Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning},
@@ -61,5 +61,12 @@ We use the following code in our works:
   author={Sung, Yi-Lin and Nair, Varun and Raffel, Colin},
   journal={arXiv preprint arXiv:2111.09839},
   year={2021}
+}
+
+@article{aghajanyan2020intrinsic,
+  title={Intrinsic dimensionality explains the effectiveness of language model fine-tuning},
+  author={Aghajanyan, Armen and Zettlemoyer, Luke and Gupta, Sonal},
+  journal={arXiv preprint arXiv:2012.13255},
+  year={2020}
 }
 ```
