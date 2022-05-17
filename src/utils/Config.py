@@ -103,6 +103,12 @@ class Config(object):
         self.fishmask_mode = None
         self.fishmask_path = None
         self.fishmask_keep_ratio = 0.05
+        # Prefix Tuning configs
+        self.prefix_tuning_num_input_tokens = 10
+        self.prefix_tuning_num_target_tokens = 10
+        self.prefix_tuning_init_path = None
+        self.prefix_tuning_init_text = "Input:\nOutput:"
+        self.prefix_tuning_parameterization = "mlp-512"
 
         if filenames:
             for filename in filenames.split("+"):

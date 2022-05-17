@@ -3,6 +3,7 @@ from .adapters import modify_with_adapters
 from .bitfit import modify_with_bitfit
 from .prompt_tuning import modify_with_prompt_tuning
 from .intrinsic import modify_with_intrinsic_model
+from .prefix_tuning import modify_with_prefix_tuning
 
 modifier_dict = {
     "lora": modify_with_lora,
@@ -10,6 +11,7 @@ modifier_dict = {
     "adapters": modify_with_adapters,
     "prompt-tuning": modify_with_prompt_tuning,
     "intrinsic": modify_with_intrinsic_model,
+    "prefix-tuning": modify_with_prefix_tuning,
 }
 
 
