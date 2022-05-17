@@ -77,8 +77,6 @@ class EncoderDecoder(LightningModule):
 
             tensorboard_logs = {"lm_loss": lm_loss.item()}
             if self.config.mc_loss > 0:
-                if self.config.mc_loss_norm:
-                    choices_scores = choices_scores / choices_scores.mean(dim=-1, keepdim=True)
                 mc_loss = F.cross_entropy(-choices_scores, labels)
                 tensorboard_logs["mc_loss"] = mc_loss.item()
             else:
@@ -136,7 +134,7 @@ class EncoderDecoder(LightningModule):
 
         input_ids, choices_ids, labels = batch["input_ids"], batch["answer_choices_ids"], batch["labels"]
 
-        if not self.config.split_option_flag:
+        if not self.config.split_option_at_inference:
             bs, num_choices = choices_ids.size()[:2]
             flat_choices_ids = choices_ids.flatten(0, 1)
             attention_mask = (input_ids != self.tokenizer.pad_token_id).float()  # [bs, max_seq_len]
