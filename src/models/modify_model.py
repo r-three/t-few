@@ -9,17 +9,17 @@ modifier_dict = {
     "bitfit": modify_with_bitfit,
     "adapters": modify_with_adapters,
     "prompt-tuning": modify_with_prompt_tuning,
-    "intrinsic": modify_with_intrinsic_model,
     "prefix-tuning": modify_with_prefix_tuning,
 }
 
 
 def modify_transformer(transformer, config):
-    if config.model_modifier:
-        if config.model_modifier == "intrinsic":
-            from .intrinsic import modify_with_intrinsic_model
+    if config.model_modifier == "intrinsic":
+        from .intrinsic import modify_with_intrinsic_model
 
-            transformer = modify_with_intrinsic_model(transformer, config)
+        modifier_dict["intrinsic"] = modify_with_intrinsic_model
+
+    if config.model_modifier:
         if config.model_modifier in modifier_dict:
             transformer = modifier_dict[config.model_modifier](transformer, config)
         else:

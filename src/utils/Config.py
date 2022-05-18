@@ -107,7 +107,7 @@ class Config(object):
         self.prefix_tuning_num_input_tokens = 10
         self.prefix_tuning_num_target_tokens = 10
         self.prefix_tuning_init_path = None
-        self.prefix_tuning_init_text = "Input:\nOutput:"
+        self.prefix_tuning_init_text = None
         self.prefix_tuning_parameterization = "mlp-512"
 
         if filenames:
@@ -160,7 +160,7 @@ class Config(object):
         Converts parameter values in config to json
         :return: json
         """
-        return json.dumps(self.__dict__, indent=4, sort_keys=True)
+        return json.dumps(self.__dict__, indent=4, sort_keys=False)
 
     def save_config(self, filename):
         """
