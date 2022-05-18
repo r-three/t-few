@@ -2,7 +2,6 @@ from .lora import modify_with_lora
 from .adapters import modify_with_adapters
 from .bitfit import modify_with_bitfit
 from .prompt_tuning import modify_with_prompt_tuning
-from .intrinsic import modify_with_intrinsic_model
 from .prefix_tuning import modify_with_prefix_tuning
 
 modifier_dict = {
@@ -17,6 +16,10 @@ modifier_dict = {
 
 def modify_transformer(transformer, config):
     if config.model_modifier:
+        if config.model_modifier == "intrinsic":
+            from .intrinsic import modify_with_intrinsic_model
+
+            transformer = modify_with_intrinsic_model(transformer, config)
         if config.model_modifier in modifier_dict:
             transformer = modifier_dict[config.model_modifier](transformer, config)
         else:

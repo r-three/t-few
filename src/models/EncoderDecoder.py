@@ -8,7 +8,6 @@ from src.utils.get_optimizer import get_optimizer
 from src.utils.get_scheduler import get_scheduler
 from statistics import mean
 from deepspeed.utils import zero_to_fp32
-from .intrinsic import intrinsic_plugin_on_step
 from .fishmask import fishmask_plugin_on_init, fishmask_plugin_on_optimizer_step, fishmask_plugin_on_end
 
 
@@ -38,6 +37,7 @@ class EncoderDecoder(LightningModule):
 
     def training_step(self, batch, batch_idx):
         if self.config.model_modifier == "intrinsic":
+            from .intrinsic import intrinsic_plugin_on_step
             intrinsic_plugin_on_step(self)
 
         if self.config.mc_loss > 0 or self.config.unlikely_loss > 0:
