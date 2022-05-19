@@ -1,0 +1,9 @@
+{
+    "prefix_tuning_init_path": "exp_out/prefix_tuning_init.pt",
+    "prefix_tuning_init_text": "Question:\nAnswer:",
+    "prefix_tuning_parameterization": "mlp-512",
+    "trainable_param_names": ".*prefix_.*",
+    "model_modifier": "prefix-tuning",
+    "lr": 1e-2,
+    "num_steps": 1000
+}

@@ -1,4 +1,4 @@
-for method in ia3 lora lora_scaling bitfit layernorm compacter compacter_pp prompt_tuning-unlikely_100_prompts prompt_tuning-unlikely_10_prompts adapter intrinsic_said_20k intrinsic_said_500k
+for method in ia3 lora lora_scaling bitfit layernorm compacter compacter_pp prompt_tuning-unlikely_100_prompts prompt_tuning-unlikely_10_prompts adapter intrinsic_said_20k intrinsic_said_500k prefix_tuning
 do
     for dataset in copa h-swag storycloze winogrande wsc wic rte cb anli-r1 anli-r2 anli-r3
     do

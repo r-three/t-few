@@ -1,7 +1,6 @@
 import torch
 import numpy as np
 from pytorch_lightning import LightningDataModule
-import ipdb
 
 
 class FinetuneDataModule(LightningDataModule):

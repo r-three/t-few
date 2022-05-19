@@ -8,7 +8,6 @@ from promptsource import templates
 import csv
 from typing import Dict, List, Optional, Tuple
 import re
-import ipdb
 import pandas as pd
 
 
@@ -144,7 +143,7 @@ class BaseDatasetReader(object):
         if os.path.exists(DATASETS_OFFLINE):
             orig_data = load_from_disk(os.path.join(DATASETS_OFFLINE, *self.dataset_stash))[split]
         else:
-            orig_data = load_dataset(*self.dataset_stash, split=split, cache_dir=os.environ['HF_HOME'])
+            orig_data = load_dataset(*self.dataset_stash, split=split, cache_dir=os.environ["HF_HOME"])
         return orig_data
 
     def read_few_shot_dataset(self):
@@ -199,7 +198,7 @@ class StoryClozeReader(BaseDatasetReader):
             orig_data = load_from_disk(os.path.join(DATASETS_OFFLINE, *self.dataset_stash))[split]
         else:
             orig_data = load_dataset(
-                *self.dataset_stash, split=split, data_dir= "/fruitbasket/datasets/hugging_face/story_cloze"
+                *self.dataset_stash, split=split, data_dir="/fruitbasket/datasets/hugging_face/story_cloze"
             )
         orig_data = [example for example in orig_data]
         for idx, example in enumerate(orig_data):
@@ -487,22 +486,20 @@ class RaftTemplate(object):
         self.instruction = INSTRUCTIONS[self.dataset_name]
         self.fields = FIELD_ORDERING[self.dataset_name]
         self.raft_labels_in_input_string = config.raft_labels_in_input_string
-        self.legacy_labels_in_input_string = config.legacy_labels_in_input_string
 
     def apply(self, example):
-        if self.raft_labels_in_input_string:
+        if self.raft_labels_in_input_string == "comma":
             input_str = [
                 self.instruction.strip()
                 + " Possible labels: "
                 + ", ".join([choice for index, choice in enumerate(self.answer_choices)])
             ]
-        elif self.legacy_labels_in_input_string:
+        elif self.raft_labels_in_input_string == "newline":
             input_str = [
                 self.instruction.strip()
                 + "\nPossible labels:\n"
                 + "\n".join([str(index + 1) + ". " + choice for index, choice in enumerate(self.answer_choices)])
             ]
-
         else:
             input_str = [self.instruction.strip()]
 
