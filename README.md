@@ -1,6 +1,6 @@
 # T-Few
 
-This repository contains the official code for the paper: "[Few-Shot Parameter-Efficient Fine-Tuning Outperforms In-Context Learning](https://arxiv.org/abs/2205.05638)".
+This repository contains the official code for the paper: "[Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning](https://arxiv.org/abs/2205.05638)".
 
 This method outperforms in-context learning with GPT-3 and achieves state-of-the-art on "[RAFT](https://huggingface.co/spaces/ought/raft-leaderboard)".
 
@@ -11,7 +11,7 @@ First, create a virtual environment for the project and install all the requirme
 
 1. Create a virtual environment with python 3.7 `conda create -n tfew python==3.7`, then activate the environment `conda activate tfew`.
 2. Install other dependencies. `pip install -r requirements.txt -f https://download.pytorch.org/whl/cu113/torch_stable.html`
-3. If you plan to run SAID, then install dependencies with `python src/intrinsic_said_setup.py develop`. Otherwise, skip this step. 
+3. If you plan to run SAID, then install dependencies with `python src/intrinsic_said_setup.py develop`. Otherwise, skip this step.
 
 The steps above only needs to be done once. In addition, every time you start a new session, you will need to run `. bin/start.sh`
 
@@ -38,6 +38,7 @@ This should take a few hours. After that, you can use `scripts/get_results_table
 ## Citation
 
 If you find this repo helpful, welcome to cite our work:
+
 ```
 @article{liu2020tfew,
   title={Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning},
@@ -48,6 +49,7 @@ If you find this repo helpful, welcome to cite our work:
 ```
 
 We use the following code in our works:
+
 ```
 @article{mahabadi2021compacter,
   title={Compacter: Efficient low-rank hypercomplex adapter layers},
