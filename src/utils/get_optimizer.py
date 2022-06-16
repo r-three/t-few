@@ -2,7 +2,7 @@ import torch.optim as optim
 from transformers import Adafactor
 import re
 from collections import defaultdict
-
+from deepspeed.ops.adam import FusedAdam, DeepSpeedCPUAdam
 
 def get_optimizer(model, config):
     """
@@ -13,6 +13,7 @@ def get_optimizer(model, config):
     :return:
     """
     optim_name = config.optimizer
+    use_deepspeed: bool = config.use_deepspeed
 
     def param_name_to_group_name(param_name):
         if False:
@@ -32,11 +33,21 @@ def get_optimizer(model, config):
 
     param_groups = param_groups.values()
     if optim_name.lower() == "adam":
-        optimizer = optim.Adam(param_groups, lr=config.lr)
+        if use_deepspeed:
+            if config.ds_offload_optimizer:
+                optimizer = DeepSpeedCPUAdam(param_groups, lr=config.lr, adamw_mode=False)
+            else:
+                optimizer = FusedAdam(param_groups, lr=config.lr, adam_w_mode=False)
+        else:
+            optimizer = optim.Adam(param_groups, lr=config.lr)
     elif optim_name.lower() == "sgd":
         optimizer = optim.SGD(param_groups, lr=config.lr, weight_decay=config.weight_decay)
     elif optim_name.lower() == "adamw":
         optimizer = optim.AdamW(param_groups, lr=config.lr, weight_decay=config.weight_decay, eps=1e-8)
+        if config.ds_offload_optimizer:
+            optimizer = DeepSpeedCPUAdam(param_groups, lr=config.lr, weight_decay=config.weight_decay, adamw_mode=True)
+        else:
+            optimizer = FusedAdam(param_groups, lr=config.lr, weight_decay=config.weight_decay, adam_w_mode=True)
     elif optim_name.lower() == "adafactor":
         optimizer = Adafactor(
             param_groups,

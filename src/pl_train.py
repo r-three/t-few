@@ -11,6 +11,19 @@ from src.models.EncoderDecoder import EncoderDecoder
 from src.models.modify_model import modify_transformer
 from src.utils.Config import Config
 from src.utils.util import ParseKwargs, set_seeds
+from pytorch_lightning.plugins import DeepSpeedPlugin
+
+
+def deep_speed_strategy(config) -> DeepSpeedPlugin:
+    return DeepSpeedPlugin(
+        stage=config.ds_stage,
+        offload_optimizer=config.ds_offload_optimizer,
+        cpu_checkpointing=config.ds_cpu_checkpointing,
+        offload_parameters=True,
+        remote_device="nvme" if config.ds_nvme else "cpu",
+        offload_params_device="nvme" if config.ds_nvme else "cpu",
+        offload_optimizer_device="nvme" if config.ds_nvme else "cpu",
+    )
 
 
 def get_transformer(config):
@@ -39,12 +52,18 @@ def main(config):
     model = EncoderDecoder(config, tokenizer, model, dataset_reader)
     logger = TensorBoardLogger(config.exp_dir, name="log")
 
+    if "deepspeed" in config.compute_strategy or config.use_deepspeed:
+        strategy = deep_speed_strategy(config)
+        print("Using DeepSpeed lightning plugin")
+    else:
+        strategy = config.compute_strategy if config.compute_strategy != "none" else None
+
     trainer = Trainer(
         enable_checkpointing=False,
         gpus=torch.cuda.device_count(),
         precision=config.compute_precision,
         amp_backend="native",
-        strategy=config.compute_strategy if config.compute_strategy != "none" else None,
+        strategy=strategy,
         logger=logger,
         log_every_n_steps=4,
         max_steps=config.num_steps,

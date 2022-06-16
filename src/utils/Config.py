@@ -14,7 +14,7 @@ class Config(object):
         # Model Configs
         self.model = "EncDec"
         self.max_seq_len = 256
-        self.origin_model = "bigscience/T0_3B"
+        self.origin_model = "bigscience/T03B"
         self.load_weight = ""
 
         # Dataset Configs
@@ -36,6 +36,13 @@ class Config(object):
         # Compute backend configs
         self.compute_precision = "bf16"
         self.compute_strategy = "none"
+
+        # Deepspeed config
+        self.use_deepspeed = True
+        self.ds_stage = 3
+        self.ds_offload_optimizer = True
+        self.ds_cpu_checkpointing = True
+        self.ds_nvme = True
 
         # Trainer configs
         self.num_steps = 300
