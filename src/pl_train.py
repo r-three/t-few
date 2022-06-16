@@ -2,7 +2,7 @@ import os
 import torch
 import argparse
 from datetime import datetime
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, T5ForConditionalGeneration, T5TokenizerFast
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import TensorBoardLogger
 
@@ -14,28 +14,29 @@ from src.utils.util import ParseKwargs, set_seeds
 from pytorch_lightning.plugins import DeepSpeedPlugin
 
 
-def deep_speed_strategy(config) -> DeepSpeedPlugin:
+def deep_speed_strategy(config: Config) -> DeepSpeedPlugin:
     return DeepSpeedPlugin(
         stage=config.ds_stage,
         offload_optimizer=config.ds_offload_optimizer,
         cpu_checkpointing=config.ds_cpu_checkpointing,
-        offload_parameters=True,
+        offload_parameters=config.ds_offload_params,
         remote_device="nvme" if config.ds_nvme else "cpu",
         offload_params_device="nvme" if config.ds_nvme else "cpu",
         offload_optimizer_device="nvme" if config.ds_nvme else "cpu",
+        logging_batch_size_per_gpu=config.batch_size,
     )
 
 
-def get_transformer(config):
-    tokenizer = AutoTokenizer.from_pretrained(config.origin_model)
-    model = AutoModelForSeq2SeqLM.from_pretrained(config.origin_model, low_cpu_mem_usage=True)
+def get_transformer(config: Config):
+    tokenizer: T5TokenizerFast = AutoTokenizer.from_pretrained(config.origin_model)
+    model: T5ForConditionalGeneration = AutoModelForSeq2SeqLM.from_pretrained(config.origin_model, low_cpu_mem_usage=True)
 
     tokenizer.model_max_length = config.max_seq_len
     model = modify_transformer(model, config)
     return tokenizer, model
 
 
-def main(config):
+def main(config: Config):
     """
     Trains the model
 

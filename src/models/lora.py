@@ -3,9 +3,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import re
 
+from transformers import T5ForConditionalGeneration
+
+from src.utils.Config import Config
+
 
 class LoRALinear(nn.Module):
-    def __init__(self, linear_layer, rank, scaling_rank, init_scale):
+    def __init__(self, linear_layer: nn.Linear, rank: int, scaling_rank: int, init_scale: float):
         super().__init__()
         self.in_features = linear_layer.in_features
         self.out_features = linear_layer.out_features
@@ -57,7 +61,7 @@ class LoRALinear(nn.Module):
         )
 
 
-def modify_with_lora(transformer, config):
+def modify_with_lora(transformer: torch.nn.Module, config: Config):
     for m_name, module in dict(transformer.named_modules()).items():
         if re.fullmatch(config.lora_modules, m_name):
             for c_name, layer in dict(module.named_children()).items():

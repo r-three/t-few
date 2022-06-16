@@ -1,6 +1,7 @@
 import json
 import os
 import ast
+from typing_extensions import Literal
 
 
 class Config(object):
@@ -14,7 +15,7 @@ class Config(object):
         # Model Configs
         self.model = "EncDec"
         self.max_seq_len = 256
-        self.origin_model = "bigscience/T03B"
+        self.origin_model = "bigscience/T0_3B"
         self.load_weight = ""
 
         # Dataset Configs
@@ -30,7 +31,7 @@ class Config(object):
         self.change_hswag_templates = False
         self.raft_cross_validation = True
         self.raft_validation_start = 0
-        self.raft_labels_in_input_string = "comma"
+        self.raft_labels_in_input_string: Literal["comma", "newline", None] = "comma"
         self.cleaned_answer_choices_b77 = False
 
         # Compute backend configs
@@ -40,9 +41,10 @@ class Config(object):
         # Deepspeed config
         self.use_deepspeed = True
         self.ds_stage = 3
+        self.ds_offload_params = True
         self.ds_offload_optimizer = True
         self.ds_cpu_checkpointing = True
-        self.ds_nvme = True
+        self.ds_nvme = False
 
         # Trainer configs
         self.num_steps = 300

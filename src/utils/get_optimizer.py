@@ -4,7 +4,9 @@ import re
 from collections import defaultdict
 from deepspeed.ops.adam import FusedAdam, DeepSpeedCPUAdam
 
-def get_optimizer(model, config):
+from src.utils.Config import Config
+
+def get_optimizer(model, config: Config):
     """
     Construct optimizer based on config
 

@@ -1,6 +1,8 @@
+from typing import List
 import torch
 import numpy as np
 from pytorch_lightning import LightningDataModule
+from promptsource.templates import Template
 
 
 class FinetuneDataModule(LightningDataModule):
@@ -54,19 +56,20 @@ class FinetuneDataModule(LightningDataModule):
 
 
 class FinetuneDatasetWithTemplate(torch.utils.data.dataset.Dataset):
-    def __init__(self, dataset, templates, tokenizer, add_special_tokens=True):
+    def __init__(self, dataset, templates: List[Template], tokenizer, add_special_tokens=True):
         super().__init__()
         self.dataset = dataset
         self.templates = templates
         self.tokenizer = tokenizer
         self.add_special_tokens = add_special_tokens
 
+
     def __len__(self):
         return len(self.dataset)
 
     def __getitem__(self, key):
         if isinstance(self.templates, list):
-            template = np.random.choice(self.templates)
+            template: Template = np.random.choice(self.templates)
         else:
             template = self.templates
         example = self.dataset[key]

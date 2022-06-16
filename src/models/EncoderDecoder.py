@@ -4,6 +4,7 @@ import torch
 import torch.nn.functional as F
 import torch.distributed as dist
 from pytorch_lightning import LightningModule
+from src.utils.Config import Config
 from src.utils.get_optimizer import get_optimizer
 from src.utils.get_scheduler import get_scheduler
 from statistics import mean
@@ -16,7 +17,7 @@ class EncoderDecoder(LightningModule):
     Encoder Decoder
     """
 
-    def __init__(self, config, tokenizer, transformer, dataset_reader):
+    def __init__(self, config: Config, tokenizer, transformer, dataset_reader):
         """
         :param config
         """
@@ -36,6 +37,7 @@ class EncoderDecoder(LightningModule):
             fishmask_plugin_on_init(self)
 
     def training_step(self, batch, batch_idx):
+        torch.cuda.empty_cache()
         if self.config.model_modifier == "intrinsic":
             from .intrinsic import intrinsic_plugin_on_step
             intrinsic_plugin_on_step(self)
@@ -119,7 +121,6 @@ class EncoderDecoder(LightningModule):
 
         if self.global_step % self.config.save_step_interval == 0:
             self.save_model()
-
         return loss
 
     def predict(self, batch):

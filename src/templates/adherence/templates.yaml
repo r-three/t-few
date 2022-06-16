@@ -1,0 +1,27 @@
+dataset: adherence
+templates:
+  80e4797c-2454-4f27-8032-a8191cd3602d: !Template
+    answer_choices: no ||| yes
+    id: 80e4797c-2454-4f27-8032-a8191cd3602d
+    jinja: |-
+      {% if metadata.split != "test" %}The take-up, adherence, or compliance rate describes the percentage of participants eligible for an intervention who actually participated in the intervention or complied with the study's plan. Your job is to determine whether the following sentence from a research paper is about the take-up, adherence, or compliance rate for the {{ intervention }} intervention.
+
+      Answer yes if the sentence is about the take-up, adherence, or compliance rate; answer no if it is about something else, such as the study's design or results.
+
+      The section heading in which the sentence appears is {{ section }}.
+
+      For additional context, the sentence appears in the following paragraph: {{ context }}
+
+      Sentence: {{ sentence }}
+
+      |||
+
+      {{ answer_choices[label] }}{% endif %}
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      metrics:
+      - Accuracy
+      - Other
+      original_task: true
+    name: yes_or_no_with_explanation
+    reference: 'Metrics: Accuracy, Precision, Recall, F1'

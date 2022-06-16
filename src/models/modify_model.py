@@ -1,10 +1,16 @@
+from typing import Callable, Dict
+from transformers import T5ForConditionalGeneration
+
+from src.utils.Config import Config
 from .lora import modify_with_lora
 from .adapters import modify_with_adapters
 from .bitfit import modify_with_bitfit
 from .prompt_tuning import modify_with_prompt_tuning
 from .prefix_tuning import modify_with_prefix_tuning
 
-modifier_dict = {
+modifier_dict: Dict[
+    str, Callable[[T5ForConditionalGeneration, Config], T5ForConditionalGeneration]
+] = {
     "lora": modify_with_lora,
     "bitfit": modify_with_bitfit,
     "adapters": modify_with_adapters,
@@ -13,7 +19,7 @@ modifier_dict = {
 }
 
 
-def modify_transformer(transformer, config):
+def modify_transformer(transformer: T5ForConditionalGeneration, config: Config):
     if config.model_modifier == "intrinsic":
         from .intrinsic import modify_with_intrinsic_model
 

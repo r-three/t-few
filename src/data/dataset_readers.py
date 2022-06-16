@@ -10,6 +10,8 @@ from typing import Dict, List, Optional, Tuple
 import re
 import pandas as pd
 
+from src.utils.Config import Config
+
 
 def get_dataset_reader(config):
     dataset_class = {
@@ -26,6 +28,7 @@ def get_dataset_reader(config):
         "anli-r3": ANLIR3Reader,
         "wsc": WSCFixedReader,
         "ade_corpus_v2": RaftReader,
+        "adherence": AdherenceReader,
         "banking_77": RaftReader,
         "terms_of_service": RaftReader,
         "tai_safety_research": RaftReader,
@@ -94,21 +97,34 @@ TASK_BLACKLIST = [
 ]
 
 
+class CustomDatasetTemplates(DatasetTemplates):
+    @property
+    def folder_path(self) -> str:
+        if self.subset_name:
+            return os.path.join(self.dataset_name, self.subset_name)
+        else:
+            return os.path.join(self.dataset_name)
+
+
 class BaseDatasetReader(object):
     """
     DatasetReader is responsible for reading and processing dataset
     """
 
-    def __init__(self, config, dataset_stash):
+    def __init__(self, config, dataset_stash: Tuple[str, ...]):
         """
         :param config:
         """
         self.config = config
         self.dataset_stash = dataset_stash
 
-        self.templates = DatasetTemplates(*self.dataset_stash)
+        if os.path.exists(*self.dataset_stash):
+            self.templates = CustomDatasetTemplates(*self.dataset_stash)
+        else:
+            self.templates = DatasetTemplates(*self.dataset_stash)
         self.train_template = self.get_template(self.config.train_template_idx)
         self.eval_template = self.get_template(self.config.eval_template_idx)
+    
 
     def get_template(self, template_idx):
         template_names = self.templates.all_template_names
@@ -205,6 +221,22 @@ class StoryClozeReader(BaseDatasetReader):
             example["label"] = example["answer_right_ending"] - 1
             example["idx"] = idx
         return orig_data
+
+
+class AdherenceReader(BaseDatasetReader):
+    def __init__(self, config: Config):
+        super().__init__(config, dataset_stash=("src/templates/adherence",))
+
+    def read_orig_dataset(self, split):
+        orig_data = load_dataset(*self.dataset_stash, split=split)
+
+        orig_data = [example for example in orig_data]
+
+        for idx, example in enumerate(orig_data):
+            example["idx"] = idx
+            metadata = {"split": split}
+            example["metadata"] = metadata
+        return [e for e in orig_data]
 
 
 class ANLIR1Reader(BaseDatasetReader):
@@ -476,18 +508,18 @@ class T0MixtureReader(object):
 
 
 class RaftTemplate(object):
-    def __init__(self, config, answer_choices):
+    def __init__(self, config: Config, answer_choices):
         with open(os.path.join(os.path.dirname(__file__), "raft_prompt_construction_settings.jsonl")) as f:
             data = [json.loads(line) for line in f]
             FIELD_ORDERING = data[0]
             INSTRUCTIONS = data[1]
         self.dataset_name = config.dataset
         self.answer_choices = answer_choices
-        self.instruction = INSTRUCTIONS[self.dataset_name]
-        self.fields = FIELD_ORDERING[self.dataset_name]
+        self.instruction: str = INSTRUCTIONS[self.dataset_name]
+        self.fields: list[str] = FIELD_ORDERING[self.dataset_name]
         self.raft_labels_in_input_string = config.raft_labels_in_input_string
 
-    def apply(self, example):
+    def apply(self, example: Dict[str, str]):
         if self.raft_labels_in_input_string == "comma":
             input_str = [
                 self.instruction.strip()
