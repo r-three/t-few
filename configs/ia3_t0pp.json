@@ -16,5 +16,8 @@
     "batch_size": 1,
     "grad_accum_factor": 8,
     "save_model": true,
-    "compute_strategy": "deepspeed_stage_3"
+    "compute_strategy": "deepspeed_stage_3",
+    "origin_model": "bigscience/T0",
+    "load_weight": "pretrained_checkpoints/t011b_ia3_finish.pt",
+    "eval_batch_size": 1
 }

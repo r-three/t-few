@@ -12,6 +12,7 @@ from deepspeed.utils import zero_to_fp32
 from .fishmask import fishmask_plugin_on_init, fishmask_plugin_on_optimizer_step, fishmask_plugin_on_end
 
 
+
 class EncoderDecoder(LightningModule):
     """
     Encoder Decoder
@@ -133,7 +134,7 @@ class EncoderDecoder(LightningModule):
         if self.config.model_modifier == "intrinsic":
             intrinsic_plugin_on_step(self)
 
-        input_ids, choices_ids, labels = batch["input_ids"], batch["answer_choices_ids"], batch["labels"]
+        input_ids, choices_ids, labels = batch["input_ids"].to(self.device), batch["answer_choices_ids"].to(self.device), batch["labels"].to(self.device)
 
         if not self.config.split_option_at_inference:
             bs, num_choices = choices_ids.size()[:2]

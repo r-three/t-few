@@ -18,7 +18,7 @@ templates:
 
       {{ answer_choices[label] }}{% endif %}
     metadata: !TemplateMetadata
-      choices_in_prompt: true
+      choices_in_prompt: false
       metrics:
       - Accuracy
       - Other

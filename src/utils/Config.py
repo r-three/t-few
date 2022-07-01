@@ -16,7 +16,7 @@ class Config(object):
         self.model = "EncDec"
         self.max_seq_len = 256
         self.origin_model = "bigscience/T0_3B"
-        self.load_weight = ""
+        self.load_weight = "pretrained_checkpoints/t03b_ia3_finish.pt"
 
         # Dataset Configs
         self.dataset = "sst2"
@@ -25,14 +25,15 @@ class Config(object):
         self.few_shot_random_seed = 100
         self.train_template_idx = -1
         self.eval_template_idx = -1
-        self.batch_size = 8
-        self.eval_batch_size = 16
+        self.batch_size = 1
+        self.eval_batch_size = 32
         self.num_workers = 8
         self.change_hswag_templates = False
         self.raft_cross_validation = True
         self.raft_validation_start = 0
         self.raft_labels_in_input_string: Literal["comma", "newline", None] = "comma"
         self.cleaned_answer_choices_b77 = False
+        self.balanced_sampling = True
 
         # Compute backend configs
         self.compute_precision = "bf16"
@@ -43,15 +44,15 @@ class Config(object):
         self.ds_stage = 3
         self.ds_offload_params = True
         self.ds_offload_optimizer = True
-        self.ds_cpu_checkpointing = True
+        self.ds_cpu_checkpointing = False
         self.ds_nvme = False
 
         # Trainer configs
         self.num_steps = 300
-        self.eval_epoch_interval = 10_000
-        self.eval_before_training = True
+        self.eval_step_interval = 128
+        self.eval_before_training = False
         self.save_model = True
-        self.save_step_interval = 20_000
+        self.save_step_interval = 2999
         self.mc_loss = 0
         self.unlikely_loss = 0
         self.length_norm = 0
@@ -139,9 +140,10 @@ class Config(object):
                     v = v
             else:
                 v = v
-            if not hasattr(self, k):
-                raise ValueError(f"{k} is not in the config")
-            setattr(self, k, v)
+            if hasattr(self, k):
+                setattr(self, k, v)
+            else:
+                print(f"WARNING: Unknown config key: {k}")
 
     def set_exp_dir(self):
         """

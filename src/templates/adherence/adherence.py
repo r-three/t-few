@@ -56,35 +56,35 @@ class AdherenceDataset(datasets.GeneratorBasedBuilder):
         ]
 
     def _generate_examples(self, split):
-        with open(os.path.join(self.data_dir, "raw.json")) as f:
-            data = json.load(f)
+        filename = "train.json" if split == datasets.Split.TRAIN else "test.json"
+        yield from _generate_from_file(os.path.join(self.data_dir, filename), split)
 
-            rows: List[Tuple[int, dict]] = []
 
-            for key, row in enumerate(data):
-                label = (
-                    1
-                    if row["annotations"]
-                    and row["annotations"][0].get("result")
-                    and "adherence"
-                    in row["annotations"][0]["result"][0]
-                    .get("value", {})
-                    .get("choices", [])
-                    else 0
-                )
-                rows.append((key, {
-                    "sentence": row["data"]["sentence"],
-                    "context": row["data"]["context"],
-                    "intervention": row["data"]["intervention"],
-                    "section": row["data"]["section"],
-                    "prediction": row["data"]["prediction"],
-                    "label": label,
-                }))
+def _generate_from_file(filename: str, split):
+    with open(filename, "r") as f:
+        data = json.load(f)
 
-            if split == datasets.Split.TRAIN:
-                rows = rows[:int(len(rows) * 0.9)]
-            else:
-                rows = rows[int(len(rows) * 0.9):]
-            
-            for row in rows:
-                yield row
+    rows: List[Tuple[int, dict]] = []
+
+    for key, row in enumerate(data):
+        label = (
+            1
+            if row["annotations"]
+            and row["annotations"][0].get("result")
+            and row["annotations"][0]["result"][0]
+            .get("value", {})
+            .get("choices", [""])[0] in ("adherence", "1")
+            else 0
+        )
+        rows.append((key, {
+            "sentence": row["data"]["sentence"],
+            "context": row["data"]["context"],
+            "intervention": row["data"]["intervention"],
+            "section": row["data"]["section"],
+            "prediction": row["data"].get("base_prediction") or row["data"]["prediction"],
+            "label": label,
+        }))
+
+    for row in rows:
+        yield row
+           
