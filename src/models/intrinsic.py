@@ -273,14 +273,14 @@ class IntrinsicDimensionLight:
 
     @staticmethod
     def apply(
-        module, intrinsic_dimension, output_dir, str_filter=set(), said=False, projection="fastfood", device="cuda"
+        module, intrinsic_dimension, str_filter=set(), said=False, projection="fastfood", device="cuda"
     ):
         # for k, hook in module._forward_pre_hooks.items():
         #     if isinstance(hook, IntrinsicDimensionLight) and hook.name == name:
         #         raise RuntimeError(
         #             "Cannot register two intrinsic dimension hooks on " "the same parameter {}".format(name)
         #         )
-        fn = IntrinsicDimensionLight(module, intrinsic_dimension, output_dir, str_filter, said, projection, device)
+        fn = IntrinsicDimensionLight(module, intrinsic_dimension, str_filter, said, projection, device)
         module.intrinsic_fn = fn
         # module.register_forward_pre_hook(fn)
         return fn
@@ -313,7 +313,7 @@ class IntrinsicDimensionLight:
 def modify_with_intrinsic_model(model, config):
     IntrinsicDimensionLight.apply(
         model,
-        config.intrinsic_dimension,
+        config.intrinsic_dim,
         set(),
         config.intrinsic_said,
         config.intrinsic_projection,

@@ -130,6 +130,7 @@ class EncoderDecoder(LightningModule):
         :return:
         """
         if self.config.model_modifier == "intrinsic":
+            from .intrinsic import intrinsic_plugin_on_step
             intrinsic_plugin_on_step(self)
 
         input_ids, choices_ids, labels = batch["input_ids"], batch["answer_choices_ids"], batch["labels"]
