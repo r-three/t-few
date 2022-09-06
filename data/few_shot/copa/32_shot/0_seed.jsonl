@@ -1,0 +1,32 @@
+{"premise": "The group overlooked the woman's faux pas.", "choice1": "The woman was relieved.", "choice2": "The woman apologized.", "question": "effect", "idx": 132, "label": 0}
+{"premise": "The woman complimented the man.", "choice1": "He sneezed.", "choice2": "He blushed.", "question": "effect", "idx": 309, "label": 1}
+{"premise": "The girl shared her lunch with her friend.", "choice1": "Her friend forgot to bring his lunch.", "choice2": "Her friend sat next to her at lunch.", "question": "cause", "idx": 341, "label": 0}
+{"premise": "My flight got delayed.", "choice1": "Tornadoes were sighted in the area.", "choice2": "I was held up at airport security.", "question": "cause", "idx": 196, "label": 0}
+{"premise": "The woman pressed down on the piano key.", "choice1": "A sound played.", "choice2": "The key got stuck.", "question": "effect", "idx": 246, "label": 0}
+{"premise": "The man threw his empty can onto the street.", "choice1": "He was jumped from behind.", "choice2": "He was fined for littering.", "question": "effect", "idx": 60, "label": 1}
+{"premise": "I chugged the pitcher of water.", "choice1": "I walked upstairs.", "choice2": "I ran five miles.", "question": "cause", "idx": 155, "label": 1}
+{"premise": "The man revealed personal information to the therapist.", "choice1": "He trusted the therapist.", "choice2": "He disagreed with the therapist.", "question": "cause", "idx": 261, "label": 0}
+{"premise": "The mirror in the bathroom fogged up.", "choice1": "The girl turned on the fan.", "choice2": "The girl applied her makeup.", "question": "effect", "idx": 141, "label": 0}
+{"premise": "The fortune teller's revelations were convincing.", "choice1": "She received many returning customers.", "choice2": "Many customers asked for refunds.", "question": "effect", "idx": 214, "label": 0}
+{"premise": "The woman won the lottery.", "choice1": "She bought a yacht.", "choice2": "She joined a church.", "question": "effect", "idx": 37, "label": 0}
+{"premise": "The man became disabled.", "choice1": "His family offered him financial support.", "choice2": "His family cut off contact with him.", "question": "effect", "idx": 134, "label": 0}
+{"premise": "The surfer caught the wave.", "choice1": "The wave carried her to the shore.", "choice2": "She paddled her board into the ocean.", "question": "effect", "idx": 113, "label": 0}
+{"premise": "The hunter ran out of ammunition.", "choice1": "He reloaded the gun.", "choice2": "He aimed at the deer.", "question": "effect", "idx": 348, "label": 0}
+{"premise": "The pond froze over for the winter.", "choice1": "People skated on the pond.", "choice2": "People brought boats to the pond.", "question": "effect", "idx": 12, "label": 0}
+{"premise": "The crowd gave the band a standing ovation.", "choice1": "The band signed autographs.", "choice2": "The band reappeared on the stage.", "question": "effect", "idx": 59, "label": 1}
+{"premise": "The egg splattered.", "choice1": "I dropped it.", "choice2": "I boiled it.", "question": "cause", "idx": 293, "label": 0}
+{"premise": "I held the door for the woman entering behind me.", "choice1": "The door slammed shut.", "choice2": "The woman thanked me.", "question": "effect", "idx": 140, "label": 1}
+{"premise": "The tenants were evicted from the apartment.", "choice1": "They neglected to pay their rent.", "choice2": "They got along with their landlord.", "question": "cause", "idx": 206, "label": 0}
+{"premise": "The woman felt an electric shock.", "choice1": "She grabbed the doorknob.", "choice2": "She pounded on the door.", "question": "cause", "idx": 199, "label": 0}
+{"premise": "The man held his breath.", "choice1": "He went underwater.", "choice2": "He treaded water.", "question": "cause", "idx": 176, "label": 0}
+{"premise": "The chef pressed down on the dough.", "choice1": "The dough crumbled.", "choice2": "The dough flattened.", "question": "effect", "idx": 268, "label": 1}
+{"premise": "The turtle hid in its shell.", "choice1": "It ate a fish.", "choice2": "It detected a predator.", "question": "cause", "idx": 124, "label": 1}
+{"premise": "The cup of tea was scalding hot.", "choice1": "I blew on it.", "choice2": "I poured it out.", "question": "effect", "idx": 344, "label": 0}
+{"premise": "The father shut off the children's television.", "choice1": "It was bedtime for the children.", "choice2": "The children were watching cartoons.", "question": "cause", "idx": 175, "label": 0}
+{"premise": "The woman fanned herself with her hand.", "choice1": "She installed the air conditioner in the room.", "choice2": "The air conditioner in the room broke.", "question": "cause", "idx": 313, "label": 1}
+{"premise": "The girl was angry with her friend.", "choice1": "The girl spread a rumor about her friend.", "choice2": "The girl told a secret to her friend.", "question": "effect", "idx": 78, "label": 0}
+{"premise": "The girl gasped.", "choice1": "Her friend stuck an ice cube down her back.", "choice2": "Her friend gave her a pat on the back.", "question": "cause", "idx": 15, "label": 0}
+{"premise": "The boy had trouble buttoning his shirt.", "choice1": "He refused to wear the shirt.", "choice2": "He asked his mother for help.", "question": "effect", "idx": 286, "label": 1}
+{"premise": "The child kicked the stack of blocks.", "choice1": "The stack towered over the boy's head.", "choice2": "The blocks scattered all over the rug.", "question": "effect", "idx": 102, "label": 1}
+{"premise": "The motorcyclist twisted the throttle.", "choice1": "The motorcycle coasted to a halt.", "choice2": "The motorcycle shot forward.", "question": "effect", "idx": 170, "label": 1}
+{"premise": "The ocean tide was dangerous.", "choice1": "The swimmers put on more sunscreen.", "choice2": "The swimmers returned towards the shore.", "question": "effect", "idx": 303, "label": 1}

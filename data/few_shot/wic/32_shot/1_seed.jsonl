@@ -1,0 +1,32 @@
+{"word": "light", "sentence1": "Hey, buddy, you got a light?", "sentence2": "Can you shed light on this problem?", "start1": 22, "start2": 13, "end1": 27, "end2": 18, "idx": 763, "label": 0}
+{"word": "interest", "sentence1": "In the interest of safety.", "sentence2": "Victorian furniture is an interest of mine.", "start1": 7, "start2": 26, "end1": 15, "end2": 34, "idx": 116, "label": 0}
+{"word": "vermin", "sentence1": "Boys in the village have probably been shooting vermin.", "sentence2": "Cereals must be protected from mice and other vermin.", "start1": 48, "start2": 46, "end1": 54, "end2": 52, "idx": 4244, "label": 1}
+{"word": "grain", "sentence1": "Sand of a fine grain.", "sentence2": "A stone of coarse grain.", "start1": 15, "start2": 18, "end1": 20, "end2": 23, "idx": 5233, "label": 1}
+{"word": "bear", "sentence1": "Bear a heavy load.", "sentence2": "Bear a resemblance.", "start1": 0, "start2": 0, "end1": 4, "end2": 4, "idx": 4497, "label": 0}
+{"word": "cover", "sentence1": "Cover her face with a handkerchief.", "sentence2": "This should cover everyone in the group.", "start1": 0, "start2": 12, "end1": 5, "end2": 17, "idx": 2064, "label": 0}
+{"word": "flood", "sentence1": "Flood the market with tennis shoes.", "sentence2": "The images flooded his mind.", "start1": 0, "start2": 11, "end1": 5, "end2": 18, "idx": 5132, "label": 0}
+{"word": "drag", "sentence1": "He performed in drag.", "sentence2": "He went to the party dressed in drag.", "start1": 16, "start2": 32, "end1": 20, "end2": 36, "idx": 2217, "label": 1}
+{"word": "echo", "sentence1": "Napoleon III was an echo of the mighty Emperor but an infinitely better man.", "sentence2": "His contention contains more than an echo of Rousseau.", "start1": 20, "start2": 37, "end1": 24, "end2": 41, "idx": 1162, "label": 1}
+{"word": "wealth", "sentence1": "She brings a wealth of knowledge to the project.", "sentence2": "Great wealth is not a sign of great intelligence.", "start1": 13, "start2": 6, "end1": 19, "end2": 12, "idx": 3687, "label": 1}
+{"word": "glimpse", "sentence1": "From the window he could catch a glimpse of the lake.", "sentence2": "I only got a glimpse of the car, so I can tell you the colour but not the registration number.", "start1": 33, "start2": 13, "end1": 40, "end2": 20, "idx": 4215, "label": 0}
+{"word": "head", "sentence1": "200 head of cattle.", "sentence2": "A reduction in the assessment per head of sheep.", "start1": 4, "start2": 34, "end1": 8, "end2": 38, "idx": 1956, "label": 1}
+{"word": "head", "sentence1": "I've got to go to the head.", "sentence2": "This song keeps going through my head.", "start1": 22, "start2": 33, "end1": 26, "end2": 37, "idx": 2837, "label": 0}
+{"word": "carry", "sentence1": "These bonds carry warrants.", "sentence2": "We carry a very large mortgage.", "start1": 12, "start2": 3, "end1": 17, "end2": 8, "idx": 3446, "label": 0}
+{"word": "pay", "sentence1": "She had to pay the penalty for speaking out rashly.", "sentence2": "He paid her off the books and in kind where possible.", "start1": 11, "start2": 3, "end1": 14, "end2": 7, "idx": 4887, "label": 0}
+{"word": "drive", "sentence1": "His drive and energy exhausted his co-workers.", "sentence2": "The riverside drive offers many exciting scenic views.", "start1": 4, "start2": 14, "end1": 9, "end2": 19, "idx": 4447, "label": 0}
+{"word": "make", "sentence1": "What make of car is that?", "sentence2": "What make of car do you drive?", "start1": 5, "start2": 5, "end1": 9, "end2": 9, "idx": 4262, "label": 1}
+{"word": "forbid", "sentence1": "The rules forbid smoking.", "sentence2": "The rules forbid our smoking.", "start1": 10, "start2": 10, "end1": 16, "end2": 16, "idx": 4145, "label": 1}
+{"word": "series", "sentence1": "A comedy series.", "sentence2": "His coin collection included the complete series of Indian-head pennies.", "start1": 9, "start2": 42, "end1": 15, "end2": 48, "idx": 3892, "label": 0}
+{"word": "dibs", "sentence1": "Who's got dibs on the chips?", "sentence2": "Dibs means I get the hammock.", "start1": 10, "start2": 0, "end1": 14, "end2": 4, "idx": 1375, "label": 1}
+{"word": "feel", "sentence1": "I feel that he doesn't like me.", "sentence2": "I felt my way cautiously through the dangerous business maneuver.", "start1": 2, "start2": 2, "end1": 6, "end2": 6, "idx": 2704, "label": 0}
+{"word": "work", "sentence1": "I will work hard to improve my grades.", "sentence2": "They worked on the task.", "start1": 7, "start2": 5, "end1": 11, "end2": 11, "idx": 1225, "label": 1}
+{"word": "make", "sentence1": "Make an effort.", "sentence2": "Make love, not war.", "start1": 0, "start2": 0, "end1": 4, "end2": 4, "idx": 4930, "label": 1}
+{"word": "make", "sentence1": "One swallow does not a summer make.", "sentence2": "This makes the third infraction.", "start1": 30, "start2": 5, "end1": 34, "end2": 10, "idx": 3176, "label": 1}
+{"word": "piece", "sentence1": "I need to rest for a piece.", "sentence2": "She bought a lovely piece of china.", "start1": 21, "start2": 20, "end1": 26, "end2": 25, "idx": 847, "label": 0}
+{"word": "shoot", "sentence1": "Shoot craps.", "sentence2": "Shoot a movie.", "start1": 0, "start2": 0, "end1": 5, "end2": 5, "idx": 3724, "label": 0}
+{"word": "marriage", "sentence1": "Pat and Leslie's marriage to each other lasted forty years.", "sentence2": "You should enter marriage for love.", "start1": 17, "start2": 17, "end1": 25, "end2": 25, "idx": 3618, "label": 0}
+{"word": "anchorage", "sentence1": "The plant needs a firm anchorage.", "sentence2": "The mother provides emotional anchorage for the entire family.", "start1": 23, "start2": 30, "end1": 32, "end2": 39, "idx": 4226, "label": 1}
+{"word": "war", "sentence1": "The \"war on drugs\" is a campaign against the use of narcotic drugs.", "sentence2": "The war on poverty.", "start1": 5, "start2": 4, "end1": 8, "end2": 7, "idx": 3272, "label": 1}
+{"word": "turn", "sentence1": "Turn a key.", "sentence2": "Turn the clay on the wheel.", "start1": 0, "start2": 0, "end1": 4, "end2": 4, "idx": 3693, "label": 0}
+{"word": "go", "sentence1": "Go about the world in a certain manner.", "sentence2": "His knowledge doesn't go very far.", "start1": 0, "start2": 22, "end1": 2, "end2": 24, "idx": 2850, "label": 0}
+{"word": "cot", "sentence1": "A roller cot (the clothing of a drawing roller in a spinning frame).", "sentence2": "A cot for a sore finger.", "start1": 9, "start2": 2, "end1": 12, "end2": 5, "idx": 580, "label": 1}

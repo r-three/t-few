@@ -1,0 +1,32 @@
+{"word": "see", "sentence1": "You should see a lawyer.", "sentence2": "We had to see a psychiatrist.", "start1": 11, "start2": 10, "end1": 14, "end2": 13, "idx": 96, "label": 1}
+{"word": "turn", "sentence1": "Turn your face to the wall.", "sentence2": "She is turning 50 this year.", "start1": 0, "start2": 7, "end1": 4, "end2": 14, "idx": 1388, "label": 0}
+{"word": "give", "sentence1": "What will you give her for her birthday?", "sentence2": "She gave a pair of shoes to her husband for their anniversary.", "start1": 14, "start2": 4, "end1": 18, "end2": 8, "idx": 3963, "label": 1}
+{"word": "call", "sentence1": "The mayor likes to call on some of the prominent citizens.", "sentence2": "She called her children lazy and ungrateful.", "start1": 19, "start2": 4, "end1": 23, "end2": 10, "idx": 2890, "label": 0}
+{"word": "embody", "sentence1": "As the car salesman approached, wearing a plaid suit and slicked-back hair, he seemed to embody sleaze.", "sentence2": "This painting embodies the feelings of the Romantic period.", "start1": 89, "start2": 14, "end1": 95, "end2": 22, "idx": 1848, "label": 1}
+{"word": "class", "sentence1": "The class of all sets is not a set.", "sentence2": "There are two classes of detergents.", "start1": 4, "start2": 14, "end1": 9, "end2": 21, "idx": 5094, "label": 1}
+{"word": "sign", "sentence1": "The hunters found deer sign at the end of the trail.", "sentence2": "Those clouds show signs of raining soon.", "start1": 23, "start2": 18, "end1": 27, "end2": 23, "idx": 2760, "label": 1}
+{"word": "par", "sentence1": "Par for this course is 72.", "sentence2": "He needs to make this shot for par.", "start1": 0, "start2": 31, "end1": 3, "end2": 34, "idx": 2206, "label": 1}
+{"word": "patch", "sentence1": "A cabbage patch.", "sentence2": "A briar patch.", "start1": 10, "start2": 8, "end1": 15, "end2": 13, "idx": 1368, "label": 1}
+{"word": "lift", "sentence1": "Lift a ban.", "sentence2": "I lifted the books onto the table.", "start1": 0, "start2": 2, "end1": 4, "end2": 8, "idx": 5390, "label": 0}
+{"word": "bring", "sentence1": "Waiter, please bring me a single malt whiskey.", "sentence2": "This brings me to the main point.", "start1": 15, "start2": 5, "end1": 20, "end2": 11, "idx": 4379, "label": 1}
+{"word": "shock", "sentence1": "Whole fields of wheat in shock.", "sentence2": "It came as a shock to learn that he was injured.", "start1": 25, "start2": 13, "end1": 30, "end2": 18, "idx": 699, "label": 0}
+{"word": "stuff", "sentence1": "There's good stuff in that book.", "sentence2": "The stuff of heros.", "start1": 13, "start2": 4, "end1": 18, "end2": 9, "idx": 1533, "label": 0}
+{"word": "undergo", "sentence1": "Undergo a strange sensation.", "sentence2": "The chemical undergoes a sudden change.", "start1": 0, "start2": 13, "end1": 7, "end2": 22, "idx": 3838, "label": 1}
+{"word": "refine", "sentence1": "Refine paper stock.", "sentence2": "Refine pig iron.", "start1": 0, "start2": 0, "end1": 6, "end2": 6, "idx": 2986, "label": 1}
+{"word": "carry", "sentence1": "These bonds carry warrants.", "sentence2": "The loan carries a high interest rate.", "start1": 12, "start2": 9, "end1": 17, "end2": 16, "idx": 556, "label": 1}
+{"word": "sentence", "sentence1": "The judge leniently granted a sentence with no hard time. He is not living at home because he is doing time.", "sentence2": "His sentence was 5 to 10 years.", "start1": 30, "start2": 4, "end1": 38, "end2": 12, "idx": 2867, "label": 1}
+{"word": "get", "sentence1": "She didn't get his name when they met the first time.", "sentence2": "The ice storm got my hibiscus.", "start1": 11, "start2": 14, "end1": 14, "end2": 17, "idx": 2964, "label": 0}
+{"word": "tramp", "sentence1": "A homeless tramp.", "sentence2": "The tramp of military boots.", "start1": 11, "start2": 4, "end1": 16, "end2": 9, "idx": 1147, "label": 0}
+{"word": "crush", "sentence1": "Crush an aluminum can.", "sentence2": "She was crushed by his refusal of her invitation.", "start1": 0, "start2": 8, "end1": 5, "end2": 15, "idx": 1662, "label": 0}
+{"word": "application", "sentence1": "The application of indexes to tables of data.", "sentence2": "The application of maximum thrust.", "start1": 4, "start2": 4, "end1": 15, "end2": 15, "idx": 2442, "label": 1}
+{"word": "wall", "sentence1": "The wall followed the road.", "sentence2": "Stomach walls.", "start1": 4, "start2": 8, "end1": 8, "end2": 13, "idx": 1156, "label": 0}
+{"word": "answer", "sentence1": "Answer the riddle.", "sentence2": "Answer a question.", "start1": 0, "start2": 0, "end1": 6, "end2": 6, "idx": 465, "label": 1}
+{"word": "pay", "sentence1": "She had to pay the penalty for speaking out rashly.", "sentence2": "You'll pay for this opinion later.", "start1": 11, "start2": 7, "end1": 14, "end2": 10, "idx": 4563, "label": 1}
+{"word": "use", "sentence1": "I can't use this tool.", "sentence2": "Use the plastic bags to store the food.", "start1": 8, "start2": 0, "end1": 11, "end2": 3, "idx": 2072, "label": 1}
+{"word": "work", "sentence1": "This dough does not work easily.", "sentence2": "Work the phones.", "start1": 20, "start2": 0, "end1": 24, "end2": 4, "idx": 1598, "label": 0}
+{"word": "make", "sentence1": "Make a mistake.", "sentence2": "My wife made me buy a new sofa.", "start1": 0, "start2": 8, "end1": 4, "end2": 12, "idx": 4180, "label": 0}
+{"word": "mean", "sentence1": "The sky is red this morning -- does that mean we're in for a storm?", "sentence2": "I didn't mean to knock your tooth out.", "start1": 41, "start2": 9, "end1": 45, "end2": 13, "idx": 2162, "label": 0}
+{"word": "day", "sentence1": "My day began early this morning.", "sentence2": "It was a busy day on the stock exchange.", "start1": 3, "start2": 14, "end1": 6, "end2": 17, "idx": 1443, "label": 1}
+{"word": "leak", "sentence1": "A leak in a roof.", "sentence2": "He had to clean up the leak.", "start1": 2, "start2": 23, "end1": 6, "end2": 27, "idx": 1189, "label": 1}
+{"word": "par", "sentence1": "Par for this course is 72.", "sentence2": "On a par with the best.", "start1": 0, "start2": 5, "end1": 3, "end2": 8, "idx": 2825, "label": 0}
+{"word": "authority", "sentence1": "She lost all her respect and authority after turning up drunk to the meeting.", "sentence2": "Tennessee Valley Authority.", "start1": 29, "start2": 17, "end1": 38, "end2": 26, "idx": 5381, "label": 0}

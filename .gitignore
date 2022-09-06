@@ -3,7 +3,6 @@ env/
 results/
 lib/
 output/
-data/
 pretrained_models
 pretrained_models/
 .idea/
