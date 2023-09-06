@@ -18,7 +18,7 @@ class Config(object):
         self.load_weight = ""
 
         # Dataset Configs
-        self.dataset = "sst2"
+        self.dataset = "rte"
         self.few_shot = True
         self.num_shot = 16
         self.few_shot_random_seed = 100
